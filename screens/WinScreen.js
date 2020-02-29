@@ -1,15 +1,11 @@
 import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 export default function WinScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.wordMa}>
-<<<<<<< Updated upstream
-        WinScreen
-      </Text>
-=======
-        <Text style={styles.winnerText}>Player 1</Text>
+<Text style={styles.winnerText}>Player 1</Text>
         {"\n"}You Win!!
       </Text>
       <View>
@@ -30,7 +26,6 @@ export default function WinScreen({ navigation }) {
           }}
         />
       </View>
->>>>>>> Stashed changes
     </View >
   );
 }
@@ -40,11 +35,9 @@ WinScreen.navigationOptions = {
 };
 
 const styles = StyleSheet.create({
+
   wordMa: {
-<<<<<<< Updated upstream
-    fontSize: 20,
-=======
-    fontFamily: 'lobster-regular',
+ fontFamily: 'lobster-regular',
     fontSize: 60,
     display: 'flex',
     justifyContent: 'center',
@@ -62,6 +55,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignContent: 'center',
     color: 'blue'
->>>>>>> Stashed changes
   }
 });

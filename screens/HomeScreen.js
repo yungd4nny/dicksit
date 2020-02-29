@@ -44,7 +44,7 @@ export default function HomeScreen({ navigation }) {
       />
 
       <View>
-        <Text>
+        <Text style={{ fontSize: 30, fontFamily: 'lobster-regular' }}>
           Dicksit
       </Text>
       </View>

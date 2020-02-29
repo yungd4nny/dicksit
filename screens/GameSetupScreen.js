@@ -25,48 +25,18 @@ export default class GameSetupScreen extends React.Component {
         return (
             <ScrollView style={styles.container}>
                 <Text style={styles.title}>Who's playing?</Text>
-                <TextInput
-                    style={styles.textInputs}
-                    placeholder="Player 1"
-                    onChangeText={(text) => { this.updatePlayerName(0, text) }}
-                    value={this.state.playerNames[0]}
-                />
-                <TextInput
-                    style={styles.textInputs}
-                    placeholder="Player 2"
-                    onChangeText={(text) => { this.updatePlayerName(1, text) }}
-                    value={this.state.playerNames[1]}
-                />
-                <TextInput
-                    style={styles.textInputs}
-                    placeholder="Player 3"
-                    onChangeText={(text) => { this.updatePlayerName(2, text) }}
-                    value={this.state.playerNames[2]}
-                />
                 {
-                    this.state.playerNames[2] ? (<TextInput
-                        style={styles.textInputs}
-                        placeholder="Player 4"
-                        onChangeText={(text) => { this.updatePlayerName(3, text) }}
-                        value={this.state.playerNames[3]}
-                    />) : null
+                    [1, 2, 3, 4, 5, 6].map((n) =>
+                        <TextInput
+                            key={n}
+                            style={styles.textInputs}
+                            placeholder={'Player ' + n}
+                            onChangeText={(text) => { this.updatePlayerName(+n - 1, text) }}
+                            value={this.state.playerNames[+n - 1]}
+                        />
+                    )
                 }
-                {
-                    this.state.playerNames[3] ? (<TextInput
-                        style={styles.textInputs}
-                        placeholder="Player 5"
-                        onChangeText={(text) => { this.updatePlayerName(4, text) }}
-                        value={this.state.playerNames[4]}
-                    />) : null
-                }
-                {
-                    this.state.playerNames[4] ? (<TextInput
-                        style={styles.textInputs}
-                        placeholder="Player 6"
-                        onChangeText={(text) => { this.updatePlayerName(5, text) }}
-                        value={this.state.playerNames[5]}
-                    />) : null
-                }
+
             </ScrollView>
         );
 

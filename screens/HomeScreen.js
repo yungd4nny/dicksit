@@ -18,7 +18,11 @@ export default function HomeScreen() {
         />
       </View>
 
-
+    <View>
+      <Text>
+          Dicksit
+      </Text>
+    </View>
       <TouchableOpacity onPress={() => Alert.alert("big pee pee energy")}>
 
         <View style={styles.peepeecontainer}>
@@ -91,6 +95,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  
   developmentModeText: {
     marginBottom: 20,
     color: 'rgba(0,0,0,0.4)',

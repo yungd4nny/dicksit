@@ -11,11 +11,8 @@ export default function HomeScreen() {
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
           <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
+            source={{uri:
+              'https://f4.bcbits.com/img/a1976873474_10.jpg'}}
             style={styles.welcomeImage}
           />
         </View>

@@ -2,7 +2,8 @@ import * as React from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
-import { RectButton, ScrollView } from 'react-native-gesture-handler';
+import TabBarIcon from '../components/TabBarIcon';
+import { RectButton, ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class GameSetupScreen extends React.Component {
     constructor(props) {
@@ -21,6 +22,22 @@ export default class GameSetupScreen extends React.Component {
         this.setState({ numPlayers: num })
     }
 
+    startGame = (num, names) => {
+        gameData = {
+            numPlayers: this.state.numPlayers,
+            playerNames: this.state.playerNames.filter(String),
+            playerScores: new Array(this.state.playerNames.filter(String).length),
+            playerWord: '',
+            roundNum: 1,
+            chosenImages: new Array(this.state.playerNames.filter(String).length),
+            wordPlayer: 1,
+            votedImages: new Array(this.state.playerNames.filter(String).length - 1),
+            scoreLimit: 10,
+            playerDecks: new Array(new Array(this.state.playerNames.filter(String).length), 6),
+        };
+        this.props.navigation.navigate('WordPhase', { gameData: gameData })
+    }
+
     render() {
         return (
             <View style={{ flex: 1 }}>
@@ -30,7 +47,7 @@ export default class GameSetupScreen extends React.Component {
                         [1, 2, 3, 4, 5, 6].map((n) =>
                             <TextInput
                                 key={n}
-                                style={styles.textInputs}
+                                style={[styles.textInputs, { flex: 1 }]}
                                 placeholder={'Player ' + n}
                                 onChangeText={(text) => { this.updatePlayerName(+n - 1, text) }}
                                 value={this.state.playerNames[+n - 1]}
@@ -39,6 +56,12 @@ export default class GameSetupScreen extends React.Component {
                     }
 
                 </ScrollView>
+                <TouchableOpacity
+                    style={styles.arrow}
+                    onPress={this.startGame}
+                >
+                    <TabBarIcon style={styles.arrow} name="md-arrow-round-forward" />
+                </TouchableOpacity>
             </View>
         );
 
@@ -47,6 +70,10 @@ export default class GameSetupScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    arrow: {
+        alignSelf: 'flex-end',
+        padding: 15,
+    },
     title: {
         fontSize: 45,
         padding: 10,

@@ -5,17 +5,27 @@ export default function WinScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.wordMa}>
-        <Text style={styles.winnerText}>Player 1 </Text>You Win!!
+<Text style={styles.winnerText}>Player 1</Text>
+        {"\n"}You Win!!
       </Text>
       <View>
-      <Image
+        <Image
           source={{
             uri:
-            'https://i.imgur.com/baOJsZ4.png'
+              'https://i.ya-webdesign.com/images/big-chungus-clipart-dance-gif-6.gif'
           }}
-        style={{width: 150, height: 100, alignSelf: 'center'}} 
+          style={{
+            display: 'flex',
+            width: 375,
+            height: 350,
+            alignSelf: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            marginVertical: '-20%'
+          }}
         />
-    </View>
+      </View>
     </View >
   );
 }
@@ -27,11 +37,23 @@ WinScreen.navigationOptions = {
 const styles = StyleSheet.create({
 
   wordMa: {
-    fontFamily: 'lobster-regular',
-    fontSize: 20,
-    alignSelf: 'center'
+ fontFamily: 'lobster-regular',
+    fontSize: 60,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    marginVertical: '30%',
+    padding: 5,
   },
   winnerText: {
-    color: 'blue',
+    fontFamily: 'lobster-regular',
+    display: 'flex',
+    fontSize: 120,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    color: 'blue'
   }
 });

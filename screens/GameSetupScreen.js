@@ -23,21 +23,23 @@ export default class GameSetupScreen extends React.Component {
 
     render() {
         return (
-            <ScrollView style={styles.container}>
-                <Text style={styles.title}>Who's playing?</Text>
-                {
-                    [1, 2, 3, 4, 5, 6].map((n) =>
-                        <TextInput
-                            key={n}
-                            style={styles.textInputs}
-                            placeholder={'Player ' + n}
-                            onChangeText={(text) => { this.updatePlayerName(+n - 1, text) }}
-                            value={this.state.playerNames[+n - 1]}
-                        />
-                    )
-                }
+            <View style={{ flex: 1 }}>
+                <ScrollView style={styles.container}>
+                    <Text style={styles.title}>Who's playing?</Text>
+                    {
+                        [1, 2, 3, 4, 5, 6].map((n) =>
+                            <TextInput
+                                key={n}
+                                style={styles.textInputs}
+                                placeholder={'Player ' + n}
+                                onChangeText={(text) => { this.updatePlayerName(+n - 1, text) }}
+                                value={this.state.playerNames[+n - 1]}
+                            />
+                        )
+                    }
 
-            </ScrollView>
+                </ScrollView>
+            </View>
         );
 
     }

@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import VotePrompt from '../components/VotePrompt';
 
 export default function VotePhaseScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.wordMa}>
-        VotePhaseScreen
-      </Text>
+      <View>  
+        <VotePrompt playerName={'Jenny'} phrase={'destiny'} wordPlayer={'David'}>
+        </VotePrompt>
+    </View>
     </View >
   );
 }

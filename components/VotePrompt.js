@@ -5,7 +5,7 @@ export default function VotePrompt({playerName,phrase, wordPlayer}){
     return<View style={styles.VotePromptContainer}>
          <Text style={styles.votePromptPlayerText}> {playerName}</Text>
             <Text>
-            choose the card <Text style={styles.votePromptWordPlayerText}>{wordPlayer}</Text> chose that best fits the phrase:
+            pick the card <Text style={styles.votePromptWordPlayerText}>{wordPlayer}</Text> chose that best fits the phrase:
             </Text>
          <Text style={styles.votePromptPhraseText}>
              {phrase}
@@ -22,7 +22,8 @@ const styles = StyleSheet.create({
 
     },
     votePromptPlayerText: {
-        color: 'blue'
+        color: 'blue',
+        fontSize: 20
     },
     votePromptWordPlayerText: {
         color: 'red'

@@ -13,6 +13,7 @@ import VotePhaseScreen from './screens/VotePhaseScreen';
 import ChoosePhaseScreen from './screens/ChoosePhaseScreen';
 import ResultPhaseScreen from './screens/ResultPhaseScreen';
 import WinScreen from './screens/WinScreen';
+import GameSetupScreen from './screens/GameSetupScreen';
 
 const Stack = createStackNavigator();
 
@@ -56,6 +57,7 @@ export default function App(props) {
         {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
           <Stack.Navigator>
+            <Stack.Screen name="GameSetup" component={GameSetupScreen} />
             <Stack.Screen name="Root" component={BottomTabNavigator} />
             <Stack.Screen name="WordPhase" component={WordPhaseScreen} />
             <Stack.Screen name="ChoosePhase" component={ChoosePhaseScreen} />

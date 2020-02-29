@@ -11,7 +11,7 @@ export default function ChoosePhaseScreen({ navigation }) {
   );
 }
 
-ChoosePicturePhaseScreen.navigationOptions = {
+ChoosePhaseScreen.navigationOptions = {
   header: null,
 };
 

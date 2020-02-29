@@ -17,6 +17,11 @@ export default function HomeScreen({ navigation }) {
           style={styles.welcomeImage}
         />
       </View>
+
+      <Button
+        title="Go to SetupScreen"
+        onPress={() => navigation.navigate('GameSetup', { name: 'Jane' })}
+      />
       <Button
         title="Go to WordPhase"
         onPress={() => navigation.navigate('WordPhase', { name: 'Jane' })}
@@ -43,7 +48,7 @@ export default function HomeScreen({ navigation }) {
           Dicksit
       </Text>
       </View>
-      <TouchableOpacity onPress={() => Alert.alert("big pee pee energy")}>
+      <TouchableOpacity onPress={() => navigation.navigate('GameSetup', { name: 'Jane' })}>
 
         <View style={styles.peepeecontainer}>
           <Icon name="play" size={50} color='lightblue'>

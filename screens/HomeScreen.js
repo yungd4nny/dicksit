@@ -5,7 +5,7 @@ import * as WebBrowser from 'expo-web-browser';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { MonoText } from '../components/StyledText';
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.welcomeContainer}>
@@ -17,12 +17,32 @@ export default function HomeScreen() {
           style={styles.welcomeImage}
         />
       </View>
+      <Button
+        title="Go to WordPhase"
+        onPress={() => navigation.navigate('WordPhase', { name: 'Jane' })}
+      />
+      <Button
+        title="Go to ChoosePhase"
+        onPress={() => navigation.navigate('ChoosePhase', { name: 'Jane' })}
+      />
+      <Button
+        title="Go to VotePhase"
+        onPress={() => navigation.navigate('VotePhase', { name: 'Jane' })}
+      />
+      <Button
+        title="Go to ResultPhase"
+        onPress={() => navigation.navigate('ResultPhase', { name: 'Jane' })}
+      />
+      <Button
+        title="Go to WinScreen"
+        onPress={() => navigation.navigate('WinScreen', { name: 'Jane' })}
+      />
 
-    <View>
-      <Text>
+      <View>
+        <Text>
           Dicksit
       </Text>
-    </View>
+      </View>
       <TouchableOpacity onPress={() => Alert.alert("big pee pee energy")}>
 
         <View style={styles.peepeecontainer}>
@@ -95,7 +115,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  
+
   developmentModeText: {
     marginBottom: 20,
     color: 'rgba(0,0,0,0.4)',

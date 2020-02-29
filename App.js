@@ -7,7 +7,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import BottomTabNavigator from './navigation/BottomTabNavigator';
+import WordPhaseScreen from './screens/WordPhaseScreen';
 import useLinking from './navigation/useLinking';
+import VotePhaseScreen from './screens/VotePhaseScreen';
+import ChoosePhaseScreen from './screens/ChoosePhaseScreen';
+import ResultPhaseScreen from './screens/ResultPhaseScreen';
+import WinScreen from './screens/WinScreen';
 
 const Stack = createStackNavigator();
 
@@ -52,6 +57,11 @@ export default function App(props) {
         <NavigationContainer ref={containerRef} initialState={initialNavigationState}>
           <Stack.Navigator>
             <Stack.Screen name="Root" component={BottomTabNavigator} />
+            <Stack.Screen name="WordPhase" component={WordPhaseScreen} />
+            <Stack.Screen name="ChoosePhase" component={ChoosePhaseScreen} />
+            <Stack.Screen name="VotePhase" component={VotePhaseScreen} />
+            <Stack.Screen name="ResultPhase" component={ResultPhaseScreen} />
+            <Stack.Screen name="WinScreen" component={WinScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </View>

@@ -5,8 +5,32 @@ export default function WinScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.wordMa}>
+<<<<<<< Updated upstream
         WinScreen
       </Text>
+=======
+        <Text style={styles.winnerText}>Player 1</Text>
+        {"\n"}You Win!!
+      </Text>
+      <View>
+        <Image
+          source={{
+            uri:
+              'https://i.ya-webdesign.com/images/big-chungus-clipart-dance-gif-6.gif'
+          }}
+          style={{
+            display: 'flex',
+            width: 375,
+            height: 350,
+            alignSelf: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            marginVertical: '-20%'
+          }}
+        />
+      </View>
+>>>>>>> Stashed changes
     </View >
   );
 }
@@ -17,6 +41,27 @@ WinScreen.navigationOptions = {
 
 const styles = StyleSheet.create({
   wordMa: {
+<<<<<<< Updated upstream
     fontSize: 20,
+=======
+    fontFamily: 'lobster-regular',
+    fontSize: 60,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    marginVertical: '30%',
+    padding: 5,
+  },
+  winnerText: {
+    fontFamily: 'lobster-regular',
+    display: 'flex',
+    fontSize: 120,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    color: 'blue'
+>>>>>>> Stashed changes
   }
 });

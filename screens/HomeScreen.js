@@ -1,51 +1,39 @@
 import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Button, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import * as WebBrowser from 'expo-web-browser';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 import { MonoText } from '../components/StyledText';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <Image
-            source={{uri:
-              'https://f4.bcbits.com/img/a1976873474_10.jpg'}}
-            style={styles.welcomeImage}
-          />
-        </View>
-
-        <View style={styles.getStartedContainer}>
-          <DevelopmentModeNotice />
-
-          <Text style={styles.getStartedText}>Open up the code for this screen:</Text>
-
-          <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-            <MonoText>screens/HomeScreen.js</MonoText>
-          </View>
-
-          <Text style={styles.getStartedText}>
-            Change any of the text, save the file, and your app will automatically reload.
-          </Text>
-        </View>
-
-        <View style={styles.helpContainer}>
-          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-            <Text style={styles.helpLinkText}>Help, it didn’t automatically reload!</Text>
-          </TouchableOpacity>
-        </View>
-      </ScrollView>
-
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-        <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-          <MonoText style={styles.codeHighlightText}>navigation/BottomTabNavigator.js</MonoText>
-        </View>
+      <View style={styles.welcomeContainer}>
+        <Image
+          source={{
+            uri:
+              'https://f4.bcbits.com/img/a1976873474_10.jpg'
+          }}
+          style={styles.welcomeImage}
+        />
       </View>
-    </View>
+
+
+      <TouchableOpacity onPress={() => Alert.alert("big pee pee energy")}>
+
+        <View style={styles.peepeecontainer}>
+          <Icon name="play" size={50} color='lightblue'>
+
+          </Icon>
+
+
+        </View>
+      </TouchableOpacity>
+
+
+
+
+    </View >
   );
 }
 
@@ -87,6 +75,18 @@ function handleHelpPress() {
 }
 
 const styles = StyleSheet.create({
+  peepeecontainer: {
+    paddingLeft: 35,
+    padding: 30,
+    borderWidth: 5,
+    borderColor: 'lightblue',
+    borderRadius: 150,
+    width: '40%',
+    alignSelf: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
+
   container: {
     flex: 1,
     backgroundColor: '#fff',

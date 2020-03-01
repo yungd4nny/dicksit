@@ -13,11 +13,11 @@ export default {
   noticeText: '#fff',
   player1Color: ['#53DD6C'],
   playerColors: [
-    '#53DD6C',
-    '#63A088',
-    '#56638A',
-    '#483A58',
-    '#56203D',
-    '#DD7373',
+    '#1B98E0',
+    '#F24236',
+    '#57A773',
+    '#EE4B6A',
+    '#657ED4',
+    '#74121D',
   ],
 };

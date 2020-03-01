@@ -31,7 +31,7 @@ export default class GameSetupScreen extends React.Component {
                 playerWord: '',
                 roundNum: 1,
                 chosenImages: new Array(this.state.playerNames.filter(String).length),
-                wordPlayer: 1,
+                wordPlayer: 0,
                 votedImages: new Array(this.state.playerNames.filter(String).length - 1),
                 scoreLimit: 10,
                 playerDecks: new Array(new Array(this.state.playerNames.filter(String).length), 6),

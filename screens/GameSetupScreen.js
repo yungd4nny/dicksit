@@ -27,7 +27,7 @@ export default class GameSetupScreen extends React.Component {
             gameData = {
                 numPlayers: this.state.numPlayers,
                 playerNames: this.state.playerNames.filter(String),
-                playerScores: new Array(this.state.playerNames.filter(String).length),
+                playerScores: new Array(this.state.playerNames.filter(String).length).fill(0),
                 playerWord: '',
                 roundNum: 1,
                 chosenImages: new Array(this.state.playerNames.filter(String).length),

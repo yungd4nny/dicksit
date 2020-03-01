@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import TabBarIcon from '../components/TabBarIcon';
 import { RectButton, ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import imgurls from '../assets/imgurls';
 
 export default class GameSetupScreen extends React.Component {
     constructor(props) {
@@ -34,8 +35,17 @@ export default class GameSetupScreen extends React.Component {
                 wordPlayer: 0,
                 votedImages: new Array(this.state.playerNames.filter(String).length - 1),
                 scoreLimit: 10,
-                playerDecks: new Array(new Array(this.state.playerNames.filter(String).length), 6),
+                playerDecks: new Array(this.state.playerNames.filter(String).length).fill(new Array(6).fill('')),
             };
+            gameData.playerDecks.forEach((deck, deckIndex) => {
+                deck.forEach((card, cardIndex) => {
+                    console.log('ligma');
+                    j = Math.floor(Math.random() * imgurls.length)
+                    gameData.playerDecks[deckIndex][cardIndex] = imgurls[j]
+                    console.log(imgurls[j])
+
+                })
+            })
             this.props.navigation.navigate('WordPhase', { gameData: gameData })
         }
         else {

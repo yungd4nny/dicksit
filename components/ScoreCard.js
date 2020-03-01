@@ -12,13 +12,16 @@ export function  ScoreCard(props) {
 
         <View style={styles.container}>
         <View style = {styles.labelcontainer}>
-        <Text style = {[styles.label, {}]}>
+        <Text style = {[styles.label, {width: 300}]}>
             Current Scores
+        </Text>
+        <Text style = {[styles.label, {width: 100}]}>
+            Round Number
         </Text>
         </View>
         <View style = {styles.sqcontainer}>
           {
-            GameData.scores.map(function(val, ind){
+            prop[playerScores].map(function(val, ind){
               return (
                 <View style = {[styles.sq, {width: 300/GameData.scores.length, backgroundColor: GameData.colors[ind]}]}>
                   <Text style = {styles.text}>
@@ -28,7 +31,10 @@ export function  ScoreCard(props) {
               )
             })
           }
-
+          <View style = {[styles.sq, {width: 100}}>
+            <Text style = {[styles.text, {color: 'black'}]}>
+              {prop.roundNum}
+          </View>
         </View>
         </View>
       );
@@ -52,8 +58,9 @@ const styles = StyleSheet.create({
   labelcontainer: {
     left: 0,
     top: 0,
-    backgroundColor: '#FFFFFF',
-    width: 300,
+    flexDirection: 'row',
+    backgroundColor: '#F5FCFF',
+    width: 400,
     height: 10
 
 

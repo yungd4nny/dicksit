@@ -20,5 +20,6 @@ export default imgurls = [
     'https://i.imgur.com/ZErG04w.png',
     'https://i.imgur.com/zhdPvsc.png',
     'https://i.imgur.com/VLTbnvk.png',
-    'https://i.imgur.com/GuNWXIt.png'
+    'https://i.imgur.com/GuNWXIt.png',
+    'https://i.imgur.com/STmmi79.png',
 ];

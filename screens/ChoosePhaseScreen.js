@@ -5,10 +5,10 @@ import WordPhasePrompt from '../components/WordPhasePrompt';
 export default function ChoosePhaseScreen({ navigation }) {
   return (
     <View style={styles.container}>
-       <View>  
+      <View>
         <WordPhasePrompt playerName={'Jenny'} phrase={'destiny'}>
         </WordPhasePrompt>
-    </View>
+      </View>
     </View >
   );
 }

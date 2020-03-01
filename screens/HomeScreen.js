@@ -4,8 +4,32 @@ import { ScrollView } from 'react-native-gesture-handler';
 import * as WebBrowser from 'expo-web-browser';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { MonoText } from '../components/StyledText';
+import imgurls from '../assets/imgurls';
 
 export default function HomeScreen({ navigation }) {
+
+  let demoGameData = {
+    numPlayers: 3,
+    playerNames: ['David', 'Danny', 'Waka'],
+    playerScores: [0, 0, 0],
+    playerWord: '',
+    roundNum: 1,
+    chosenImages: [, ,],
+    wordPlayer: 1,
+    votedImages: [, ,],
+    scoreLimit: 10,
+    playerDecks: new Array(3).fill(new Array(6).fill('')),
+  };
+
+  demoGameData.playerDecks.forEach((deck, deckIndex) => {
+    deck.forEach((card, cardIndex) => {
+      console.log('ligma');
+      let j = Math.floor(Math.random() * imgurls.length);
+      demoGameData.playerDecks[deckIndex][cardIndex] = imgurls[j];
+      console.log(imgurls[j])
+
+    })
+  });
   return (
     <View style={styles.container}>
       <View style={styles.welcomeContainer}>
@@ -24,11 +48,11 @@ export default function HomeScreen({ navigation }) {
       />
       <Button
         title="Go to WordPhase"
-        onPress={() => navigation.navigate('WordPhase', { name: 'Jane' })}
+        onPress={() => navigation.navigate('WordPhase', { gameData: demoGameData })}
       />
       <Button
         title="Go to ChoosePhase"
-        onPress={() => navigation.navigate('ChoosePhase', { name: 'Jane' })}
+        onPress={() => navigation.navigate('ChoosePhase', { gameData: demoGameData })}
       />
       <Button
         title="Go to VotePhase"

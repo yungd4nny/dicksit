@@ -2,11 +2,13 @@ import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import WordPhasePrompt from '../components/WordPhasePrompt';
 
-export default function ChoosePhaseScreen({ navigation }) {
+export default function ChoosePhaseScreen({ navigation, route }) {
+  let gameData = route.params.gameData;
+
   return (
     <View style={styles.container}>
       <View>
-        <WordPhasePrompt playerName={'Jenny'} phrase={'destiny'}>
+        <WordPhasePrompt playerName={gameData.playerNames[0]} phrase={'destiny'}>
         </WordPhasePrompt>
       </View>
     </View >

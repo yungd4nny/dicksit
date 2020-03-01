@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Colors from '../constants/Colors';
 
 export default function WinScreen({ navigation }) {
   return (
@@ -34,7 +35,8 @@ export default function WinScreen({ navigation }) {
 WinScreen.navigationOptions = {
   header: null,
 };
-
+//const c = playerColors;
+console.log(Colors);
 const styles = StyleSheet.create({
 
   wordMa: {
@@ -48,6 +50,6 @@ const styles = StyleSheet.create({
     fontFamily: 'lobster-regular',
     display: 'flex',
     fontSize: 120,
-    color: 'blue'
+    color: Colors.playerColors[0]
   }
 });

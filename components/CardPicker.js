@@ -22,7 +22,7 @@ export default class CardPicker extends React.Component {
       selectedCard: index,
     });
     if (this.props.onCardSelect) {
-      this.props.onCardSelect(img_url);
+      this.props.onCardSelect(img_url, index);
     }
   }
 

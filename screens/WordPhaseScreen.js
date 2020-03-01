@@ -2,18 +2,21 @@ import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View, Alert } from 'react-native';
 import WordPhaseInput from '../components/WordPhaseInput';
 import TabBarIcon from '../components/TabBarIcon';
+import CardPicker from '../components/CardPicker';
 
 
 export default function WordPhaseScreen({ navigation, route }) {
+  let gameData = route.params.gameData;
+  let wordPlayer = gameData.wordPlayer;
+  console.log('wordplayer=' + wordPlayer);
 
-
-  updateWord = (newWord) => {
-    route.params.gameData.playerWord = newWord;
+  let updateWord = (newWord) => {
+    gameData.playerWord = newWord;
   }
 
-  nextTurn = () => {
-    if (route.params.gameData.playerWord) {
-      navigation.navigate('ChoosePhase', { gameData: route.params.gameData })
+  let nextTurn = () => {
+    if (gameData.playerWord) {
+      navigation.navigate('ChoosePhase', { gameData: gameData })
     } else {
       Alert.alert('Please type something!');
     }
@@ -24,9 +27,18 @@ export default function WordPhaseScreen({ navigation, route }) {
       <View>
         {/* <Text>{JSON.stringify(route.params.gameData)}</Text> */}
         <WordPhaseInput
-          playerName={route.params.gameData.playerNames[route.params.gameData.wordPlayer]}
+          playerName={gameData.playerNames[wordPlayer]}
           onChange={(text) => { updateWord(text) }}>
         </WordPhaseInput>
+      </View>
+      <View>
+        <CardPicker
+          deck={gameData.playerDecks[wordPlayer]}
+          onCardSelect={(url, index) => {
+            gameData.chosenImages[wordPlayer] = gameData.playerDecks[wordPlayer][index];
+            console.log(gameData);
+          }
+          } />
       </View>
       <View>
         <TouchableOpacity

@@ -30,9 +30,9 @@ export default class GameSetupScreen extends React.Component {
                 playerNames: this.state.playerNames.filter(String),
                 playerScores: new Array(this.state.playerNames.filter(String).length).fill(0),
                 playerWord: '',
-                roundNum: 1,
+                roundNum: 0,
                 chosenImages: new Array(this.state.playerNames.filter(String).length),
-                wordPlayer: 0,
+                wordPlayer: 1,
                 votedImages: new Array(this.state.playerNames.filter(String).length - 1),
                 scoreLimit: 10,
                 playerDecks: new Array(this.state.playerNames.filter(String).length).fill(new Array(6).fill('')),
@@ -45,7 +45,7 @@ export default class GameSetupScreen extends React.Component {
                     console.log(imgurls[j])
 
                 })
-            })
+            });
             this.props.navigation.navigate('WordPhase', { gameData: gameData })
         }
         else {

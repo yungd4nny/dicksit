@@ -5,6 +5,7 @@ import * as WebBrowser from 'expo-web-browser';
 import TabBarIcon from '../components/TabBarIcon';
 import { RectButton, ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
 import imgurls from '../assets/imgurls';
+import Colors from '../constants/Colors';
 
 export default class GameSetupScreen extends React.Component {
     constructor(props) {
@@ -59,11 +60,12 @@ export default class GameSetupScreen extends React.Component {
                 <ScrollView style={styles.container}>
                     <Text style={styles.title}>Who's playing?</Text>
                     {
-                        [1, 2, 3, 4, 5, 6].map((n) =>
+                        [0, 1, 2, 3, 4, 5].map((n) =>
                             <TextInput
                                 key={n}
-                                style={[styles.textInputs, { flex: 1 }]}
-                                placeholder={'Player ' + n}
+                                style={[styles.textInputs, { flex: 1, color: 'white', backgroundColor: Colors.playerColors[n] }]}
+                                placeholder={'Set Player ' + n + ' Name'}
+                                placeholderTextColor='lightgrey'
                                 onChangeText={(text) => { this.updatePlayerName(+n - 1, text) }}
                                 value={this.state.playerNames[+n - 1]}
                             />

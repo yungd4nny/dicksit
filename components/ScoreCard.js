@@ -3,12 +3,15 @@ import Colors from '../constants/Colors';
 import { Text, StyleSheet, View } from 'react-native';
 
 
+export function ScoreCard(){
+  return(
+    <SC vals = {19}/>
+  )
+}
 
-export function ScoreCard(props) {
+function SC(props) {
+
   return (
-
-
-
     <View style={styles.container}>
       <View style={styles.labelcontainer}>
         <Text style={[styles.label, { width: 300 }]}>
@@ -32,7 +35,7 @@ export function ScoreCard(props) {
         }
         <View style={[styles.sq, { width: 100 }]}>
           <Text style={[styles.text, { color: 'black', fontFamily: 'lobster-regular', fontSize: 30 }]}>
-            13
+            {props.vals}
             </Text>
         </View>
       </View>
@@ -89,7 +92,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#00BCD4',
     textAlign: 'center',
     alignItems: 'center',
-    fontFamily: 'lobster-regular'
+    fontFamily: 'lobster-regular',
+    borderBottomLeftRadius: 4,
+    borderBottomRightRadius: 4
 
   },
   text:

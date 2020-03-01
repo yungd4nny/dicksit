@@ -1,11 +1,10 @@
 import * as React from 'react';
 import Colors from '../constants/Colors';
 import { Text, StyleSheet, View } from 'react-native';
-var val = 19;
+
 
 
 export function  ScoreCard(props) {
-
       return (
 
 
@@ -21,7 +20,7 @@ export function  ScoreCard(props) {
         </View>
         <View style = {styles.sqcontainer}>
           {
-            prop[playerScores].map(function(val, ind){
+            [0, 2, 5, 6].map(function(val, ind){
               return (
                 <View style = {[styles.sq, {width: 300/GameData.scores.length, backgroundColor: GameData.colors[ind]}]}>
                   <Text style = {styles.text}>
@@ -31,9 +30,10 @@ export function  ScoreCard(props) {
               )
             })
           }
-          <View style = {[styles.sq, {width: 100}}>
+          <View style = {[styles.sq, {width: 100}]}>
             <Text style = {[styles.text, {color: 'black'}]}>
-              {prop.roundNum}
+              13
+            </Text>
           </View>
         </View>
         </View>

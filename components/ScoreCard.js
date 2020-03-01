@@ -18,11 +18,11 @@ export function ScoreCard(props) {
           Round Number
         </Text>
       </View>
-      <View style={styles.sqcontainer}>
+      <View style={[styles.sqcontainer, { fontFamily: 'lobster-regular' }]}>
         {
           [0, 2, 5, 6].map(function (val, ind) {
             return (
-              <View style={[styles.sq, { width: 300 / GameData.scores.length, backgroundColor: GameData.colors[ind] }]}>
+              <View style={[styles.sq, { width: 300 / GameData.scores.length, backgroundColor: GameData.colors[ind], fontFamily: 'lobster-regular' }]}>
                 <Text style={styles.text}>
                   {val}
                 </Text>
@@ -31,7 +31,7 @@ export function ScoreCard(props) {
           })
         }
         <View style={[styles.sq, { width: 100 }]}>
-          <Text style={[styles.text, { color: 'black' }]}>
+          <Text style={[styles.text, { color: 'black', fontFamily: 'lobster-regular', fontSize: 30 }]}>
             13
             </Text>
         </View>
@@ -51,7 +51,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: '#F5FCFF',
     width: 300,
-    height: 70
+    height: 70,
+    fontFamily: 'lobster-regular'
 
 
   },
@@ -61,7 +62,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#F5FCFF',
     width: 400,
-    height: 10
+    height: 10,
+    fontFamily: 'lobster-regular'
 
 
   },
@@ -73,7 +75,9 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: '#F5FCFF',
     width: 200,
-    height: 0
+    height: 0,
+    fontFamily: 'lobster-regular'
+
 
 
   },
@@ -84,7 +88,9 @@ const styles = StyleSheet.create({
     left: 0,
     backgroundColor: '#00BCD4',
     textAlign: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    fontFamily: 'lobster-regular'
+
   },
   text:
   {
@@ -93,7 +99,9 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 30,
     fontWeight: 'bold',
-    lineHeight: 50
+    lineHeight: 50,
+    fontFamily: 'lobster-regular'
+
   },
   label:
   {
@@ -102,7 +110,9 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 10,
     fontWeight: 'bold',
-    lineHeight: 10
+    lineHeight: 10,
+    fontFamily: 'lobster-regular'
+
   }
 });
 var GameData = {

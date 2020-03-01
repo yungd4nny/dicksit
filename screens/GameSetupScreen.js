@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import TabBarIcon from '../components/TabBarIcon';
@@ -23,19 +23,24 @@ export default class GameSetupScreen extends React.Component {
     }
 
     startGame = (num, names) => {
-        gameData = {
-            numPlayers: this.state.numPlayers,
-            playerNames: this.state.playerNames.filter(String),
-            playerScores: new Array(this.state.playerNames.filter(String).length),
-            playerWord: '',
-            roundNum: 1,
-            chosenImages: new Array(this.state.playerNames.filter(String).length),
-            wordPlayer: 1,
-            votedImages: new Array(this.state.playerNames.filter(String).length - 1),
-            scoreLimit: 10,
-            playerDecks: new Array(new Array(this.state.playerNames.filter(String).length), 6),
-        };
-        this.props.navigation.navigate('WordPhase', { gameData: gameData })
+        if (this.state.numPlayers > 0) {
+            gameData = {
+                numPlayers: this.state.numPlayers,
+                playerNames: this.state.playerNames.filter(String),
+                playerScores: new Array(this.state.playerNames.filter(String).length).fill(0),
+                playerWord: '',
+                roundNum: 1,
+                chosenImages: new Array(this.state.playerNames.filter(String).length),
+                wordPlayer: 1,
+                votedImages: new Array(this.state.playerNames.filter(String).length - 1),
+                scoreLimit: 10,
+                playerDecks: new Array(new Array(this.state.playerNames.filter(String).length), 6),
+            };
+            this.props.navigation.navigate('WordPhase', { gameData: gameData })
+        }
+        else {
+            Alert.alert('Please add players to start a game!');
+        }
     }
 
     render() {

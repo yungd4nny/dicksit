@@ -1,21 +1,32 @@
 import * as React from 'react';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function WinScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.wordMa}>
-        <Text style={styles.winnerText}>Player 1 </Text>You Win!!
+        <Text style={styles.winnerText}>Player 1</Text>
+        {"\n"}You Win!!
       </Text>
       <View>
-      <Image
+        <Image
           source={{
             uri:
-            'https://i.imgur.com/baOJsZ4.png'
+              'https://i.ya-webdesign.com/images/big-chungus-clipart-dance-gif-6.gif'
           }}
-        style={{width: 150, height: 100, alignSelf: 'center'}} 
+          style={{
+            display: 'flex',
+            paddingHorizontal: '10%',
+            width: '80%',
+            height: 350,
+            alignSelf: 'center',
+            justifyContent: 'center',
+            alignItems: 'center',
+            alignContent: 'center',
+            marginVertical: '-20%'
+          }}
         />
-    </View>
+      </View>
     </View >
   );
 }
@@ -28,10 +39,15 @@ const styles = StyleSheet.create({
 
   wordMa: {
     fontFamily: 'lobster-regular',
-    fontSize: 20,
-    alignSelf: 'center'
+    fontSize: 60,
+    display: 'flex',
+    marginVertical: '30%',
+    textAlign: 'center',
   },
   winnerText: {
-    color: 'blue',
+    fontFamily: 'lobster-regular',
+    display: 'flex',
+    fontSize: 120,
+    color: 'blue'
   }
 });

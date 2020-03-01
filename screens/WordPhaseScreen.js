@@ -2,13 +2,14 @@ import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import WordPhaseInput from '../components/WordPhaseInput';
 
-export default function WordPhaseScreen({ navigation }) {
+export default function WordPhaseScreen({ navigation, route }) {
   return (
     <View style={styles.container}>
-      <View>  
-        <WordPhaseInput playerName={'Jenny'} onChange={(text)=>console.log(text)}>
+      <View>
+        <Text>{JSON.stringify(route.params.gameData)}</Text>
+        <WordPhaseInput playerName={'Jenny'} onChange={(text) => console.log(text)}>
         </WordPhaseInput>
-    </View>
+      </View>
     </View >
   );
 }

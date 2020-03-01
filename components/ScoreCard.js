@@ -4,40 +4,40 @@ import { Text, StyleSheet, View } from 'react-native';
 
 
 
-export function  ScoreCard(props) {
-      return (
+export function ScoreCard(props) {
+  return (
 
 
 
-        <View style={styles.container}>
-        <View style = {styles.labelcontainer}>
-        <Text style = {[styles.label, {width: 300}]}>
-            Current Scores
+    <View style={styles.container}>
+      <View style={styles.labelcontainer}>
+        <Text style={[styles.label, { width: 300 }]}>
+          Current Scores
         </Text>
-        <Text style = {[styles.label, {width: 100}]}>
-            Round Number
+        <Text style={[styles.label, { width: 100 }]}>
+          Round Number
         </Text>
-        </View>
-        <View style = {styles.sqcontainer}>
-          {
-            [0, 2, 5, 6].map(function(val, ind){
-              return (
-                <View style = {[styles.sq, {width: 300/GameData.scores.length, backgroundColor: GameData.colors[ind]}]}>
-                  <Text style = {styles.text}>
-                    {val}
-                  </Text>
-                </View>
-              )
-            })
-          }
-          <View style = {[styles.sq, {width: 100}]}>
-            <Text style = {[styles.text, {color: 'black'}]}>
-              13
+      </View>
+      <View style={styles.sqcontainer}>
+        {
+          [0, 2, 5, 6].map(function (val, ind) {
+            return (
+              <View style={[styles.sq, { width: 300 / GameData.scores.length, backgroundColor: GameData.colors[ind] }]}>
+                <Text style={styles.text}>
+                  {val}
+                </Text>
+              </View>
+            )
+          })
+        }
+        <View style={[styles.sq, { width: 100 }]}>
+          <Text style={[styles.text, { color: 'black' }]}>
+            13
             </Text>
-          </View>
         </View>
-        </View>
-      );
+      </View>
+    </View>
+  );
 
 };
 
@@ -107,5 +107,8 @@ const styles = StyleSheet.create({
 });
 var GameData = {
   scores: [0, 4, 8, 9],
-  colors: ['red', 'blue,', 'green', 'black']
+  colors: ['#53DD6C',
+    '#63A088',
+    '#56638A',
+    '#483A58',]
 };

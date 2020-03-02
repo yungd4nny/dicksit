@@ -31,11 +31,7 @@ export default class CardPicker extends React.Component {
       <View style={styles.cardContainer}>
         {this.state.deck.map((img_url, i) => {
           return (<View key={i} onPress={() => { }}
-            style={{
-              width: '30%',
-              height: '50%',
-
-            }}>
+            style={styles.imageCard}>
             <TouchableOpacity onPress={() => { this.cardSelected(img_url, i) }}>
               <Image
                 key={i}
@@ -68,7 +64,7 @@ const styles = StyleSheet.create({
   cardContainer: {
     alignSelf: 'flex-end',
     width: '100%',
-    height: '70%',
+    maxHeight: '50%',
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
@@ -77,6 +73,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginVertical: 5,
     width: '30%',
-    height: '50%',
+    height: '90%',
   }
 });

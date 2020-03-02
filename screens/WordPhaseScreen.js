@@ -30,16 +30,16 @@ export default function WordPhaseScreen({ navigation, route }) {
           onChange={(text) => { updateWord(text) }}>
         </WordPhaseInput>
       </View>
-      <View>
+      <View style={{ backgroundColor: 'red' }}>
         <CardPicker
           deck={gameData.playerDecks[wordPlayer]}
           onCardSelect={(url, index) => {
             gameData.chosenImages[wordPlayer] = gameData.playerDecks[wordPlayer][index];
             console.log(gameData);
-          }
-          } />
+          }}
+        />
       </View>
-      <View>
+      <View style={styles.bottomBar}>
         <TouchableOpacity
           style={styles.arrow}
           onPress={nextTurn}>
@@ -55,6 +55,9 @@ WordPhaseScreen.navigationOptions = {
 };
 
 const styles = StyleSheet.create({
+  bottomBar: {
+    height: '10%',
+  },
   container: {
     flex: 1,
   },

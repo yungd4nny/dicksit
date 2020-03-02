@@ -25,7 +25,6 @@ export default function WordPhaseScreen({ navigation, route }) {
   return (
     <View style={styles.container}>
       <View>
-        {/* <Text>{JSON.stringify(route.params.gameData)}</Text> */}
         <WordPhaseInput
           gameData={gameData}
           onChange={(text) => { updateWord(text) }}>

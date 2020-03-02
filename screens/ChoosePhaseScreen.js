@@ -8,7 +8,7 @@ export default function ChoosePhaseScreen({ navigation, route }) {
   return (
     <View style={styles.container}>
       <View>
-        <WordPhasePrompt playerName={gameData.playerNames[0]} phrase={'destiny'}>
+        <WordPhasePrompt playerName={gameData.playerNames[0]} phrase={gameData.playerWord}>
         </WordPhasePrompt>
       </View>
     </View >
